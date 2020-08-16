@@ -22,6 +22,7 @@ namespace EmployeeProfile.Infrastructure.Installers
                         options.Authority = config["Sts:ServerUrl"];
                         options.RequireHttpsMetadata = false;
                         options.ApiName = config["ApiResource:ApiName"];
+                        options.ApiSecret = config["ApiResource:ApiName"];
                     });
         }
     }
