@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using EmployeeProfile.Helpers;
 
 namespace EmployeeProfile
 {
@@ -37,6 +38,9 @@ namespace EmployeeProfile
 
             //Register Automapper
             services.AddAutoMapper(typeof(MappingProfileConfiguration));
+
+            // Add authorization services
+            RegisterAuthorization(services, Configuration);
 
         }
 
@@ -94,6 +98,10 @@ namespace EmployeeProfile
             {
                 endpoints.MapControllers();
             });
+        }
+        public virtual void RegisterAuthorization(IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddAuthorizationPolicies(configuration);
         }
     }
 }

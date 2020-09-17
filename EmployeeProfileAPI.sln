@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeProfile", "EmployeeProfile\EmployeeProfile\EmployeeProfile.csproj", "{6F28F1DC-C4B7-41AE-A0DA-EBE65D1F9E1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeProfileAPI", "src\EmployeeProfile\EmployeeProfile\EmployeeProfileAPI.csproj", "{6F28F1DC-C4B7-41AE-A0DA-EBE65D1F9E1D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeProfile.Test", "EmployeeProfile\EmployeeProfile.Test\EmployeeProfile.Test.csproj", "{693480B3-021B-4F32-AE65-865C2457408E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeProfileAPI.Test", "src\EmployeeProfile\EmployeeProfile.Test\EmployeeProfileAPI.Test.csproj", "{693480B3-021B-4F32-AE65-865C2457408E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

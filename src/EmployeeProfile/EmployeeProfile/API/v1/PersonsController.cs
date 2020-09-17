@@ -13,12 +13,15 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using static Microsoft.AspNetCore.Http.StatusCodes;
 using Microsoft.AspNetCore.Authorization;
+using EmployeeProfile.Constants;
 
 namespace EmployeeProfile.API.v1
 {
     [Route("api/v1/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
+    [Authorize(Policy = AuthorizationConsts.AdministrationPolicy)]
+
 
     public class PersonsController : ControllerBase
     {
