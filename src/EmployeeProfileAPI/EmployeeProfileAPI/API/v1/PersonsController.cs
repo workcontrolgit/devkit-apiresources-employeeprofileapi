@@ -19,9 +19,7 @@ namespace EmployeeProfile.API.v1
 {
     [Route("api/v1/[controller]")]
     [ApiController]
-    //[Authorize]
-    [Authorize(Policy = AuthorizationConsts.AdministrationPolicy)]
-
+    [Authorize]
 
     public class PersonsController : ControllerBase
     {
@@ -107,6 +105,7 @@ namespace EmployeeProfile.API.v1
         [HttpDelete]
         [ProducesResponseType(typeof(ApiResponse), Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), Status404NotFound)]
+        [Authorize(Policy = AuthorizationConsts.AdministrationPolicy)]
         public async Task<ApiResponse> Delete(long id)
         {
             if (await _personManager.DeleteAsync(id))
