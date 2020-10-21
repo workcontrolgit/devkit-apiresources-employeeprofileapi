@@ -10,7 +10,6 @@ namespace EmployeeProfile.Helpers
     {
         public static void AddAuthorizationPolicies(this IServiceCollection services, IConfiguration configuration)
         {
-            //var adminApiConfiguration = services.BuildServiceProvider().GetService<AdminApiConfiguration>();
             var adminApiConfiguration = configuration.GetSection(nameof(AdminApiConfiguration)).Get<AdminApiConfiguration>();
 
 

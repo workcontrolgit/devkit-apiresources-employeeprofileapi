@@ -1,27 +1,24 @@
-﻿using EmployeeProfile.Contracts;
+﻿using AutoMapper;
+using AutoWrapper.Wrappers;
+using EmployeeProfile.Constants;
+using EmployeeProfile.Contracts;
 using EmployeeProfile.Data;
 using EmployeeProfile.Data.Entity;
 using EmployeeProfile.DTO.Request;
 using EmployeeProfile.DTO.Response;
-using AutoMapper;
-using AutoWrapper.Extensions;
-using AutoWrapper.Wrappers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Text.Json;
 using System.Threading.Tasks;
 using static Microsoft.AspNetCore.Http.StatusCodes;
-using Microsoft.AspNetCore.Authorization;
-using EmployeeProfile.Constants;
 
 namespace EmployeeProfile.API.v1
 {
     [Route("api/v1/[controller]")]
     [ApiController]
-    //[Authorize]
-    [Authorize(Policy = AuthorizationConsts.AdministrationPolicy)]
-
+    [Authorize]
 
     public class PersonsController : ControllerBase
     {
@@ -107,6 +104,7 @@ namespace EmployeeProfile.API.v1
         [HttpDelete]
         [ProducesResponseType(typeof(ApiResponse), Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), Status404NotFound)]
+        [Authorize(Policy = AuthorizationConsts.AdministrationPolicy)]
         public async Task<ApiResponse> Delete(long id)
         {
             if (await _personManager.DeleteAsync(id))

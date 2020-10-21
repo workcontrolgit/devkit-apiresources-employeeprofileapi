@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroup')]/providers/Microsoft.KeyVault/vaults/DevKitKeyVault",
+      "type": "secrets.keyVault",
+      "connectionId": "ASPNETCORE_HOSTINGSTARTUP__KEYVAULT__CONFIGURATIONVAULT",
+      "secretStore": "AzureAppSettings"
+    },
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroup1')]/providers/Microsoft.Sql/servers/workcontroldbsrv/databases/employeeprofileapidb",
+      "type": "mssql.azure",
+      "connectionId": "SQLDBConnectionString",
+      "secretStore": "AzureKeyVault"
+    },
+    "mssql2": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroup1')]/providers/Microsoft.Sql/servers/workcontroldbsrv/databases/employeeprofileapidb",
+      "type": "mssql.azure",
+      "connectionId": "HealthChecksUI/HealthCheckDatabaseConnectionString",
+      "secretStore": "AzureKeyVault"
+    }
+  }
+}
