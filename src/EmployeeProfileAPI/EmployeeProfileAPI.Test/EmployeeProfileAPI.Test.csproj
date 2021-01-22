@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EmployeeProfile\EmployeeProfileAPI.csproj" />
+    <ProjectReference Include="..\EmployeeProfileAPI\EmployeeProfileAPI.csproj" />
   </ItemGroup>
 
 </Project>

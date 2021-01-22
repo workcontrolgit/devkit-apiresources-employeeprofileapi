@@ -18,7 +18,7 @@ namespace EmployeeProfile.API.v1
 {
     [Route("api/v1/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
 
     public class PersonsController : ControllerBase
     {
@@ -55,7 +55,7 @@ namespace EmployeeProfile.API.v1
             return persons;
         }
 
-        [Route("{id:long}")]
+        [Route("{id:long}/assignments")]
         [HttpGet]
         [ProducesResponseType(typeof(PersonQueryResponse), Status200OK)]
         [ProducesResponseType(typeof(PersonQueryResponse), Status404NotFound)]
@@ -91,7 +91,7 @@ namespace EmployeeProfile.API.v1
 
             if (await _personManager.UpdateAsync(person))
             {
-                return new ApiResponse($"Record with Id: {id} sucessfully updated.", true);
+                return new ApiResponse($"Record with Id: {id} successfully updated.", true);
             }
             else
             {
@@ -109,7 +109,7 @@ namespace EmployeeProfile.API.v1
         {
             if (await _personManager.DeleteAsync(id))
             {
-                return new ApiResponse($"Record with Id: {id} sucessfully deleted.", true);
+                return new ApiResponse($"Record with Id: {id} successfully deleted.", true);
             }
             else
             {
